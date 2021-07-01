@@ -1,5 +1,5 @@
 # Todo-App
-Todo app made in vanilla javascript
+Todo app made with vanilla javascript
 
 Overview
 ---
