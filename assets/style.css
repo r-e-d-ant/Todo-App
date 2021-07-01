@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------- VARIABLES ---------- */
+:root {
+    --primary-color: rgb();
+    --second-color: rgb();
+    --green-color: rgb(0, 199, 175);
+    --red-color: rgb(255, 98, 163);
+    --indigo-color: rgb(111, 101, 243);
+    --indigo-gray: rgb(171, 177, 200);
+    --indigo-gray-alt: rgb(162, 168, 195);
+    --dark-color: rgb(58, 57, 78);
+    --dark-gray: rgb(188, 187, 194);
+    --white-color: #FAFAFF;
+    --gray-color: rgb(230, 230, 230);
+    --blue-white-color: rgb(241, 239, 255);
+}
+/* ----------- GENERAL --------- */
+body {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    background-color: rgb(78, 103, 216);
+}
+.bx {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+li {
+    text-decoration: none;
+}
+/* ----------- MAIN ----------- */
+.title {
+    color: var(--white-color);
+    font-weight: 400;
+    text-align: center;
+    margin: 1em 0;
+}
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+/* ------------ TODO INPUT FORM ------- */
+.form__input_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input__container {
+    position: relative;
+}
+.todo_input {
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    height: 2.5em;
+    width: 20em;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 .2em;
+    border: none;
+    outline: none;
+    border: thin solid rgba(46, 36, 190, 0.74);
+    border-radius: 2px;
+}
+.bx-plus {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    border-radius: 50%;
+    padding: .25em;
+    background-color: rgba(200, 198, 212, 0.37);
+    transform: translate(-50%, -50%);
+    transition: 200ms background-color;
+}
+.bx-plus:hover {
+    background-color: rgba(171, 165, 202, 0.37);
+}
+
+/*----------- TODO LISTS -----------*/
+.todo__lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 1em;
+}
+.todo__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5em 0;
+    border: thin solid var(--white-color);
+    border-radius: 2px;
+    background-color: var(--white-color);
+    transition: 200ms transform, 200ms opacity;
+}
+.delete_todo_item_animation {
+    transform: translateX(-20rem);
+    opacity: 0;
+}
+.todo {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: .3em;
+}
+.complete_todo_item {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.action__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: .5em;
+}
+.action__btn {
+    cursor: pointer;
+    padding: .60em;
+    border-radius: 2px;
+    color: var(--white-color);
+    transition: 200ms background-color;
+}
+.bx-check,
+.bx-trash {
+    pointer-events: none;
+}
+.complete {
+    background-color: var(--green-color);
+}
+.complete:hover {
+    background-color: rgb(8, 173, 154);
+}
+.delete {
+    background-color: var(--red-color);
+}
+.delete:hover {
+    background-color: rgb(235, 72, 139);
+}
+/* ---------- MEDIA QUERIES --------- */
+@media screen and (max-width: 480px){
+    .todo_input {
+        height: 2.5em;
+        width: 15em;
+    }
+}
+@media screen and (min-width: 481px){
+    .todo_input {
+        height: 2.5em;
+        width: 25em;
+    }
+    .bx-plus {
+        left: 95%;
+    }
+}
+@media screen and (min-width: 768px){
+    .todo_input {
+        height: 2.5em;
+        width: 32em;
+    }
+    .bx-plus {
+        left: 96%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media screen and (min-width: 1024px){
+    .todo_input {
+        height: 2.5em;
+        width: 40em;
+    }
+    .bx-plus {
+        left: 97%;
+        transform: translate(-50%, -50%);
+    }
+}
